@@ -32,6 +32,12 @@ module.exports = {
       resolve: `gatsby-plugin-algolia`,
       options: require(`./utils/algolia.js`),
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `jedifunk`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
