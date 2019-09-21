@@ -48,7 +48,7 @@ const renderNextLink = props => {
 
 const BlogArchive = props => {
   const {
-    pageContext: { nodes, pageNumber },
+    pageContext: { nodes },
   } = props
 
   return (

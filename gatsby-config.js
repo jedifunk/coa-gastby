@@ -1,4 +1,4 @@
-const Config = require('./config');
+const Config = require('./config')
 
 module.exports = {
   siteMetadata: {
@@ -27,6 +27,10 @@ module.exports = {
           fieldName: `wpgraphql`,
           url: Config.source.url + '/graphql',
       },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: require(`./utils/algolia.js`),
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
