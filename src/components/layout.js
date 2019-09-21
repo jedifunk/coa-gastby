@@ -1,25 +1,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Header from "./header"
-import Sidebar from "./sidebar"
+import Footer from "./footer"
 import "./layout.css"
 
-const Layout = ({ children, classNames }) => {
+const Layout = ({ children }) => {
 
   return (
     <>
       <Header siteTitle={"Choosing Our Adventure"} />
-      <div className={`content-area wrapper ${classNames}`}>
-      <div className="grid-wrapper">
-        <main>{children}</main>
-        <Sidebar />
-    </div>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+      <div id="content" className="site-content">
+          {children}
       </div>
+      <Footer />
     </>
   )
 }

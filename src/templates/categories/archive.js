@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
+import Sidebar from "../../components/sidebar"
 import PostEntry from "../../components/post-entry"
 
 const CategoryArchive = props => {
@@ -8,16 +9,19 @@ const CategoryArchive = props => {
   } = props
 
   return (
-    <Layout classNames="archive">
-      <header className="page-header">
-        <h1 className="page-title">{name}</h1>
-      </header>
-      
-      <div className="grid-wrapper">
-            <div className="content inner-grid">
+    <Layout>
+      <div id="primary" className="content-area wrapper">
+        <header className="page-header">
+          <h1 className="page-title">{name}</h1>
+        </header>
+
+        <div className="grid-wrapper">
+          <main className="content inner-grid">
             {posts.nodes && posts.nodes.map(post => { return <PostEntry key={post.id} post={post} /> })}
-            </div>
+          </main>
+          <Sidebar />
         </div>
+      </div>
     </Layout>
   )
 }
