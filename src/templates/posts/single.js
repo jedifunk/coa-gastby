@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from 'gatsby'
 import Layout from "../../components/layout"
+import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
 import PostMeta from '../../components/post-meta'
 
@@ -21,6 +22,7 @@ const SinglePost = props => {
 
     return(
     <Layout>
+      <Helmet bodyAttributes={{ class: 'single' }} />
       <div id="primary" className="content-area wrapper">
         <div className="grid-wrapper">
           <main id="main" className="site-main" role="main">

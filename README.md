@@ -1,4 +1,4 @@
-# COA Theme Gatsby port
+# COA theme Gatsby port
 WP + WPGraphQL + Gatsby
 
 This is a personal project. I am porting an existing custom Wordpress theme to Gatsby.
@@ -25,6 +25,6 @@ module.exports = Config
 ---
 ### TODO
 - [ ] Add User archive
-- [ ] Add body classes
+- [x] Add body classes
 - [ ] Gallery popup, with EXIF data
 - [ ] Test Algolia once ready to deploy, can't seem to test from localhost.

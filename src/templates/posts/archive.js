@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../../components/layout"
+import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
 import PostEntry from "../../components/post-entry"
 
@@ -53,6 +54,7 @@ const BlogArchive = props => {
 
   return (
     <Layout>
+    <Helmet bodyAttributes={{ class: 'home blog' }} />
       <div id="primary" className="content-area wrapper">
         <main id="main" className="site-main" role="main">
           <div className="grid-wrapper">

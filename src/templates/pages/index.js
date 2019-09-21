@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
+import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
 
 const SinglePage = props => {
@@ -9,6 +10,7 @@ const SinglePage = props => {
 
   return (
     <Layout>
+    <Helmet bodyAttributes={{ class: 'page' }} />
       <div id="primary" className="content-area wrapper">
         <div className="grid-wrapper">
           <main id="main" className="site-main" role="main">
