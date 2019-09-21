@@ -1,3 +1,5 @@
+const Config = require('./config');
+
 module.exports = {
   siteMetadata: {
     title: `Choosing Our Adventure`,
@@ -6,13 +8,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -30,20 +25,9 @@ module.exports = {
       options: {
           typeName: `WPGraphQL`,
           fieldName: `wpgraphql`,
-          url: `https://choosingouradventure.com/graphql`,
-      },  
-    },
-/*
-    {
-      resolve: 'gatsby-wpgraphql-inline-images',
-      options: {
-        wordPressUrl: 'https://choosingouradventure.com/',
-        uploadsUrl: 'https://choosingouradventure.com/wp-content/uploads/',
-        processPostTypes: ['Page', 'Post'],
-        graphqlTypeName: 'WPGraphQL',
+          url: Config.source.url + '/graphql',
       },
     },
-*/
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,

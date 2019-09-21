@@ -7,8 +7,13 @@ I am using the [WPGraphQL](http:wpgraphql.com) plugin to create the GraphQL sche
 
 ## Create config file
 ```javascript
-const config = {
-  wpUrl: `https://yourdomain.com`,
+const Config = {
+  source: {
+    protocol: 'https',
+    wpUrl: 'yourdomain.com',
+  }
 }
 
-module.exports = config
+Config.source.url = Config.source.protocol + '://' + Config.source.wpUrl;
+
+module.exports = Config
