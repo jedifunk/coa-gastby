@@ -5,6 +5,8 @@ This is a personal project. I am porting an existing custom Wordpress theme to G
 
 I am using the [WPGraphQL](http:wpgraphql.com) plugin to create the GraphQL schema.
 
+Added Algolia for search. Needs to be tested once ready to deploy, can't seem to test from localhost.
+
 ## Create config file
 ```javascript
 const Config = {
