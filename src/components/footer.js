@@ -4,9 +4,7 @@ const Footer = () => {
 
   return(
     <footer className="site-footer wrapper">
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <p>© {new Date().getFullYear()} Choosing Our Adventure</p>
     </footer>
   )
 }

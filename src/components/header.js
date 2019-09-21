@@ -5,13 +5,13 @@ import Menu from "./Menu"
 
 const Header = ({ siteTitle }) => {
 
-    return(
-  <header id="masthead" className="site-header" role="banner">
-    <div className="wrapper flex-wrapper">
+  return(
+    <header id="masthead" className="site-header" role="banner">
+      <div className="wrapper flex-wrapper">
         <div className="site-branding"><h1 className="site-title"><Link to="/">Choosing Our Adventure</Link></h1></div>
-        <Menu />
-    </div>
-  </header>
+          <Menu />
+        </div>
+    </header>
   )
 }
 
