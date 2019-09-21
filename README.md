@@ -24,4 +24,7 @@ module.exports = Config
 
 ---
 ### TODO
-- [ ]Test Algolia once ready to deploy, can't seem to test from localhost.
+- [ ] Add User archive
+- [ ] Add body classes
+- [ ] Gallery popup, with EXIF data
+- [ ] Test Algolia once ready to deploy, can't seem to test from localhost.
