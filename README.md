@@ -32,7 +32,9 @@ module.exports = Config
 - [ ] Move images to CDN
 - [ ] Use Gatsby Image for responsiveness
 - [ ] Gallery popup, with EXIF data
+- [ ] Add social share
 - [ ] Add page transitions
 - [ ] Add Yoast SEO via WPGraphQL
+- [ ] Integrate analytics
 - [ ] 404 page
 - [ ] Test Algolia once ready to deploy, can't seem to test from localhost.
