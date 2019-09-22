@@ -5,7 +5,7 @@ import moment from "moment/moment"
 const PostMeta = ({ author, date, categories, uri }) => (
     <div className="entry-meta">
         <span className="posted-on"><time className="entry-date published updated">{moment(date).format(`MMMM D, YYYY`)}</time></span>
-        <span className=""> by <span className="author vcard"><Link to={author.slug} className="url fn n">{author.name}</Link></span></span>
+        <span className=""> by <span className="author vcard"><Link to={`/author/${author.slug}`} className="url fn n">{author.name}</Link></span></span>
         <div className="cat-links tax-links">
             <ul className="post-categories">
             {categories.nodes.map(cat => (

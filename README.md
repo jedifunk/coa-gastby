@@ -25,7 +25,7 @@ module.exports = Config
 ---
 ### TODO
 - [x] Add body classes
-- [ ] Add User archive
+- [x] Add User archive
 - [ ] Homepage hero
 - [ ] Homepage layout
 - [ ] Move images to CDN
@@ -33,4 +33,5 @@ module.exports = Config
 - [ ] Gallery popup, with EXIF data
 - [ ] Add page transitions
 - [ ] Add Yoast SEO via WPGraphQL
+- [ ] 404 page
 - [ ] Test Algolia once ready to deploy, can't seem to test from localhost.
