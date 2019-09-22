@@ -24,9 +24,10 @@ module.exports = Config
 
 ---
 ### TODO
-- [x] Add body classes
-- [x] Add User archive
-- [x] Homepage hero
+- [x] ~~Add body classes~~
+- [x] ~~Add User archive~~
+- [x] ~~Homepage hero~~
+- [ ] Featured Image refactor to not query for every post (if possible)
 - [ ] Homepage layout
 - [ ] Move images to CDN
 - [ ] Use Gatsby Image for responsiveness

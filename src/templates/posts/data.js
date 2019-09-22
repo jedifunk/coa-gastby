@@ -1,5 +1,5 @@
 const PostTemplateFragment = `
-  fragment PostTemplateFragment on WPGraphQL_Post { 
+  fragment PostTemplateFragment on WPGraphQL_Post {
     id
     postId
     title
@@ -22,6 +22,17 @@ const PostTemplateFragment = `
     author {
       name
       slug
+    }
+    featuredImage {
+      id
+      mediaItemId
+      sourceUrl
+      mediaDetails {
+        sizes {
+          name
+          sourceUrl
+        }
+      }
     }
   }
 `

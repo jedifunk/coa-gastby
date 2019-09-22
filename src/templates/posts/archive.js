@@ -4,7 +4,8 @@ import Layout from "../../components/layout"
 import { Helmet } from 'react-helmet'
 import HpHero from '../../components/home-hero'
 import Sidebar from "../../components/sidebar"
-import PostEntry from "../../components/post-entry"
+import FeaturedPost from "../../components/featured-post"
+import PostEntry from '../../components/post-entry'
 
 const renderPreviousLink = props => {
     const {
@@ -59,10 +60,18 @@ const BlogArchive = props => {
       <HpHero />
       <div id="primary" className="content-area wrapper">
         <main id="main" className="site-main" role="main">
-          <div className="grid-wrapper">
 
+          <div className="featured flex-wrapper">
+            {nodes && nodes.slice(0, 5).map(post =>
+              <FeaturedPost key={post.id} post={post} />
+            )}
+          </div>
+
+          <div className="grid-wrapper">
             <div className="content inner-grid">
-              {nodes && nodes.map(post => <PostEntry key={post.id} post={post} /> )}
+              {nodes && nodes.filter(post => nodes.indexOf(post) < 5 ).map(post =>
+                <PostEntry key={post.id} post={post} />
+              )}
 
               <nav className="navigation post-navigation" role="navigation">
                 <div className="nav-links">
