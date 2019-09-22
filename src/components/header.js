@@ -6,6 +6,17 @@ import SearchInput from "./Search/input"
 
 const Header = ({ siteTitle }) => {
 
+  window.onscroll = function() {
+    var heroHeight = 100
+    var scrollPosition = window.pageYOffset
+
+    if( scrollPosition > heroHeight ) {
+      document.querySelector('.site-header').classList.add('scrolled')
+    } else {
+      document.querySelector('.site-header').classList.remove('scrolled')
+    }
+  }
+
   return(
     <header id="masthead" className="site-header" role="banner">
       <div className="wrapper flex-wrapper">

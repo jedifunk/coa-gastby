@@ -26,7 +26,7 @@ module.exports = Config
 ### TODO
 - [x] Add body classes
 - [x] Add User archive
-- [ ] Homepage hero
+- [x] Homepage hero
 - [ ] Homepage layout
 - [ ] Move images to CDN
 - [ ] Use Gatsby Image for responsiveness
