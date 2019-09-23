@@ -32,9 +32,12 @@ module.exports = Config
 - [ ] Move images to CDN
 - [ ] Use Gatsby Image for responsiveness
 - [ ] Gallery popup, with EXIF data
+- [ ] Find way to bring in homepage hero better, currently looking for exact image
 - [ ] Add social share
+- [ ] FontAwesome integration
 - [ ] Add page transitions
 - [ ] Add Yoast SEO via WPGraphQL
 - [ ] Integrate analytics
 - [ ] 404 page
+- [ ] Adjust WP theme to blank
 - [ ] Test Algolia once ready to deploy, can't seem to test from localhost.

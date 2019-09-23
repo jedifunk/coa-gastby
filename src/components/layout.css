@@ -699,12 +699,22 @@ figure a {
 }
 .grid-wrapper {
 	display: block;
-	grid-template-columns: [main] 2fr [sidebar] 1fr;
+}
+.grid-main {
+    grid-template-columns: [main] 2fr [sidebar] 1fr;
 	grid-gap: 2rem;
+}
+.grid-halves {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
 }
 .grid-thirds {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: .5rem;
+}
+.grid-fourths {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
 }
 figure {
 	width: 100% !important;
@@ -966,7 +976,8 @@ header input[type="search"]:focus {
 		.main-navigation > li a {
 			padding: 12px 0;
 		}
-    .content-area {
+    .content-area,
+    .home.paged .content-area {
         padding-top: 90px;
     }
     .home .content-area {

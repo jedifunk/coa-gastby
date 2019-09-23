@@ -17,8 +17,8 @@ const CategoryArchive = props => {
           <h1 className="page-title">{name}</h1>
         </header>
 
-        <div className="grid-wrapper">
-          <main className="content inner-grid">
+        <div className="grid-wrapper grid-main">
+          <main className="content grid-wrapper grid-halves">
             {posts.nodes && posts.nodes.map(post => { return <PostEntry key={post.id} post={post} /> })}
           </main>
           <Sidebar />

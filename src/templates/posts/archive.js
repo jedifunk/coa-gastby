@@ -51,35 +51,44 @@ const renderNextLink = props => {
 
 const BlogArchive = props => {
   const {
-    pageContext: { nodes },
+    pageContext: { nodes, pageNumber },
   } = props
+  
+  const paged = pageNumber > 1 ? `paged page-${pageNumber}` : ''
 
   return (
     <Layout>
-    <Helmet bodyAttributes={{ class: 'home blog' }} />
+    <Helmet>
+        <body class={`home blog ${paged}`} />
+    </Helmet>
+    {pageNumber === 1 ?
       <HpHero />
+    : null }
       <div id="primary" className="content-area wrapper">
         <main id="main" className="site-main" role="main">
-
-          <div className="featured flex-wrapper">
-            {nodes && nodes.slice(0, 5).map(post =>
+{pageNumber === 1 ?
+          <div className="featured grid-wrapper grid-fourths">
+            {nodes && nodes.slice(0, 4).map(post =>
               <FeaturedPost key={post.id} post={post} />
             )}
           </div>
-
-          <div className="grid-wrapper">
-            <div className="content inner-grid">
-              {nodes && nodes.filter(post => nodes.indexOf(post) < 5 ).map(post =>
-                <PostEntry key={post.id} post={post} />
-              )}
-
-              <nav className="navigation post-navigation" role="navigation">
-                <div className="nav-links">
-                  {renderPreviousLink(props)}
-                  {renderNextLink(props)}
+: null }
+          <div className="grid-wrapper grid-main">
+            <div>
+                <div className="content grid-wrapper grid-halves">
+                  { !pageNumber === 1 ?
+                      nodes && nodes.slice(4).map(post => <PostEntry key={post.id} post={post} /> )
+                    :
+                      nodes && nodes.map(post => <PostEntry key={post.id} post={post} /> )
+                  }
                 </div>
-              </nav>
 
+                <nav className="navigation post-navigation" role="navigation">
+                    <div className="nav-links">
+                      {renderPreviousLink(props)}
+                      {renderNextLink(props)}
+                    </div>
+                  </nav>
             </div>
 
             <Sidebar />

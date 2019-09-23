@@ -1,4 +1,4 @@
-import config from "../config"
+import Config from "../config"
 
 export const createLocalLink = url => {
 /*
@@ -6,5 +6,5 @@ export const createLocalLink = url => {
     return null
   }
 */
-  return url.replace(config.wpUrl, ``)
+  return url.replace(Config.source.url, ``)
 }
