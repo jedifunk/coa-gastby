@@ -76,7 +76,7 @@ const BlogArchive = props => {
           <div className="grid-wrapper grid-main">
             <div>
                 <div className="content grid-wrapper grid-halves">
-                  { !pageNumber === 1 ?
+                  { pageNumber === 1 ?
                       nodes && nodes.slice(4).map(post => <PostEntry key={post.id} post={post} /> )
                     :
                       nodes && nodes.map(post => <PostEntry key={post.id} post={post} /> )

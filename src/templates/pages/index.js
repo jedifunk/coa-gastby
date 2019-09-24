@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
+import ReactHtmlParser from 'react-html-parser'
 
 const SinglePage = props => {
   const {
@@ -19,7 +20,7 @@ const SinglePage = props => {
                 <h1 className="entry-title">{title}</h1>
               </header>
 
-              <div className="entry-content" dangerouslySetInnerHTML={{ __html: content }} />
+              <div className="entry-content">{ ReactHtmlParser (content) }</div>
 
             </article>
           </main>

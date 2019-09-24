@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import PostMeta from './post-meta'
+import ReactHtmlParser from 'react-html-parser'
 
 const PostEntry = ({
   post: {
@@ -19,12 +20,12 @@ const PostEntry = ({
     <article id={`post-${postId}`} className="post" >
         <header className="entry-header">
             <h3 className="entry-title">
-                <Link to={`/${uri}`}>{title}</Link>
+                <Link to={`/${uri}`}>{ ReactHtmlParser (title) }</Link>
             </h3>
             <PostMeta date={date} author={author} categories={categories} />
         </header>
 
-        <div className="entry-content" dangerouslySetInnerHTML={{ __html: excerpt }} />
+        <div className="entry-content">{ ReactHtmlParser (excerpt) }</div>
     </article>
   )
 }

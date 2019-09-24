@@ -4,6 +4,7 @@ import Layout from "../../components/layout"
 import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
 import PostMeta from '../../components/post-meta'
+import ReactHtmlParser from 'react-html-parser'
 
 const SinglePost = props => {
     const {
@@ -31,7 +32,7 @@ const SinglePost = props => {
                     <h3 className="entry-title">{title}</h3>
                     <PostMeta date={date} author={author} categories={categories} />
                 </header>
-                <div className="entry-content" dangerouslySetInnerHTML={{ __html: content }} />
+                <div className="entry-content">{ ReactHtmlParser (content) }</div>
             </article>
 
             <nav className="navigation post-navigation" role="navigation">
@@ -40,20 +41,14 @@ const SinglePost = props => {
               {prev && (
                 <div className="nav-previous">
                   <Link to={prev.uri} rel="prev">
-                    <span
-                      className="post-title"
-                      dangerouslySetInnerHTML={{ __html: prev.title }}
-                    />
+                    <span className="post-title">{ ReactHtmlParser (prev.title) }</span>
                   </Link>
                 </div>
               )}
               {next && (
                 <div className="nav-next">
                   <Link to={next.uri} rel="next">
-                    <span
-                      className="post-title"
-                      dangerouslySetInnerHTML={{ __html: next.title }}
-                    />
+                    <span className="post-title">{ ReactHtmlParser (next.title) }</span>
                   </Link>
                 </div>
               )}
