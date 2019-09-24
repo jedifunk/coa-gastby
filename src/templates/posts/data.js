@@ -26,13 +26,7 @@ const PostTemplateFragment = `
     featuredImage {
       id
       mediaItemId
-      sourceUrl
-      mediaDetails {
-        sizes {
-          name
-          sourceUrl
-        }
-      }
+      sourceUrl(size: MED_VERT)
     }
   }
 `

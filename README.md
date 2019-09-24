@@ -28,7 +28,7 @@ module.exports = Config
 - [x] ~~Add User archive~~
 - [x] ~~Homepage hero~~
 - [ ] Featured Image refactor to not query for every post (if possible)
-- [ ] Homepage layout
+- [x] Homepage layout
 - [ ] Move images to CDN
 - [ ] Use Gatsby Image for responsiveness
 - [ ] Gallery popup, with EXIF data
