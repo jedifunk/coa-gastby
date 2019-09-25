@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
 import PostMeta from '../../components/post-meta'
 import ReactHtmlParser from 'react-html-parser'
+//import TransitionLink from "gatsby-plugin-transition-link"
 import SocialShare from '../../components/social-share'
 
 const Config = require('../../../config')

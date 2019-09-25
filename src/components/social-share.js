@@ -29,7 +29,7 @@ const SocialShare = ({ socialConfig, title, featuredImage, twitterHandle }) => {
             <li className="social-item">
                 <PinterestShareButton 
                     url={socialConfig.config.url} 
-                    media={featuredImage.sourceUrl}
+                    media={featuredImage && featuredImage.sourceUrl}
                     className="pinterest"
                 >
                     <PinterestIcon size={32} round />

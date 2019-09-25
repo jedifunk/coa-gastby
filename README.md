@@ -40,7 +40,6 @@ module.exports = Config
 - [ ] Use Gatsby Image for responsiveness
 - [ ] Lazy load images, maybe(?)
 - [ ] Gallery popup, with EXIF data
-- [ ] Find way to bring in homepage hero better, currently looking for exact image
 - [x] ~~Add social share~~
 - [x] ~~FontAwesome integration~~
 - [ ] Add page transitions
@@ -48,5 +47,6 @@ module.exports = Config
 - [ ] Integrate analytics
 - [ ] 404 page
 - [ ] Featured Image refactor to not query for every post (if possible)
+- [ ] Find way to bring in homepage hero better, currently looking for exact image
 - [ ] Adjust WP theme to blank
 - [ ] Test Algolia once ready to deploy, can't seem to test from localhost.

@@ -28,7 +28,7 @@ const InstagramWidget = () => (
           <div className="grid-wrapper grid-thirds">
             {data.allInstaNode.edges.map(img => (
               <div key={img.node.id} className="grid-item">
-                <a href={`https://instagram.com/p/${img.node.id}`} target="_blank"><img src={img.node.thumbnails[0].src} alt={img.node.caption} /></a>
+                <a href={`https://instagram.com/p/${img.node.id}`} target="_blank" rel="noopener noreferrer"><img src={img.node.thumbnails[0].src} alt={img.node.caption} /></a>
               </div>
             ))}
           </div>

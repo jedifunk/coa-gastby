@@ -38,6 +38,7 @@ module.exports = {
         username: `jedifunk`,
       },
     },
+    `gatsby-plugin-transition-link`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,

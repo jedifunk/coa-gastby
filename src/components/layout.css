@@ -702,7 +702,7 @@ figure a {
 }
 .grid-main {
     grid-template-columns: [main] 2fr [sidebar] 1fr;
-	grid-gap: 2rem;
+	grid-gap: 5rem;
 }
 .grid-halves {
     grid-template-columns: repeat(2, 1fr);
@@ -960,6 +960,10 @@ header input[type="search"]:focus {
 	margin: 2px;
 }
 
+/*** Page Transitions ***/
+
+
+
 /*** Mobile ***/
 @media (min-width: 500px) {
     .flex-wrapper {
@@ -977,7 +981,7 @@ header input[type="search"]:focus {
     .site-header {
         position: fixed;
         margin-bottom: 0;
-				height: 44px;
+        height: 44px;
     }
 		.main-navigation > li a {
 			padding: 12px 0;
