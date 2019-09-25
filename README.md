@@ -16,8 +16,8 @@ const Config = {
     wpUrl: 'yourdomain.com',
   },
   search: {
-      appID: App_ID,
-      adminKey: Admin_KEY,
+      appID: APP_ID,
+      adminKey: ADMIN_KEY,
       searchKey: SEARCH_KEY,
   },
   social: {
@@ -35,17 +35,18 @@ module.exports = Config
 - [x] ~~Add body classes~~
 - [x] ~~Add User archive~~
 - [x] ~~Homepage hero~~
-- [ ] Featured Image refactor to not query for every post (if possible)
 - [x] ~~Homepage layout~~
 - [ ] Move images to CDN
 - [ ] Use Gatsby Image for responsiveness
+- [ ] Lazy load images, maybe(?)
 - [ ] Gallery popup, with EXIF data
 - [ ] Find way to bring in homepage hero better, currently looking for exact image
 - [x] ~~Add social share~~
-- [ ] FontAwesome integration
+- [x] ~~FontAwesome integration~~
 - [ ] Add page transitions
 - [ ] Add Yoast SEO via WPGraphQL
 - [ ] Integrate analytics
 - [ ] 404 page
+- [ ] Featured Image refactor to not query for every post (if possible)
 - [ ] Adjust WP theme to blank
 - [ ] Test Algolia once ready to deploy, can't seem to test from localhost.

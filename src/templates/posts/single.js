@@ -54,14 +54,14 @@ const SinglePost = props => {
                     <div className="nav-links">
                       {prev && (
                         <div className="nav-previous">
-                          <Link to={prev.uri} rel="prev">
+                          Previous: <Link to={prev.uri} rel="prev">
                             <span className="post-title">{ ReactHtmlParser (prev.title) }</span>
                           </Link>
                         </div>
                       )}
                       {next && (
                         <div className="nav-next">
-                          <Link to={next.uri} rel="next">
+                          Next: <Link to={next.uri} rel="next">
                             <span className="post-title">{ ReactHtmlParser (next.title) }</span>
                           </Link>
                         </div>
