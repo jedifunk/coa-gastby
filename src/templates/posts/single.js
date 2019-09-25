@@ -5,12 +5,16 @@ import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
 import PostMeta from '../../components/post-meta'
 import ReactHtmlParser from 'react-html-parser'
+import SocialShare from '../../components/social-share'
+
+const Config = require('../../../config')
 
 const SinglePost = props => {
     const {
         pageContext: {
           id,
           postId,
+          uri,
           title,
           content,
           date,
@@ -18,6 +22,7 @@ const SinglePost = props => {
           categories,
           prev,
           next,
+          featuredImage,
         },
     } = props
 
@@ -33,6 +38,15 @@ const SinglePost = props => {
                         <PostMeta date={date} author={author} categories={categories} />
                     </header>
                     <div className="entry-content">{ ReactHtmlParser (content) }</div>
+                    <SocialShare 
+                        socialConfig={{
+                            config: {
+                                url: `${Config.source.url}/${uri}`,
+                            }
+                        }}
+                        title={title} 
+                        featuredImage={featuredImage}
+                        twitterHandle={Config.social.twitterHandle} />
                 </article>
     
                 <nav className="navigation post-navigation" role="navigation">

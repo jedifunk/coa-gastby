@@ -1,5 +1,6 @@
 import React from "react"
 import { navigate } from 'gatsby'
+import { FaSearch } from 'react-icons/fa'
 
 const SearchInput = () => {
 
@@ -9,6 +10,7 @@ const SearchInput = () => {
       // TODO: do something with form values
       navigate("/results")
     }}>
+        <FaSearch />
       <input type="search" name="s" id="s" placeholder="discover" />
     </form>
   )

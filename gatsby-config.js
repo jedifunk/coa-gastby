@@ -3,7 +3,7 @@ const Config = require('./config')
 module.exports = {
   siteMetadata: {
     title: `Choosing Our Adventure`,
-    description: `COA with WP + WPGraphQL + Gatsby`,
+    description: `Travel Adventures`,
     author: `@jedifunk`,
   },
   plugins: [

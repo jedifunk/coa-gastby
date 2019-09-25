@@ -14,6 +14,14 @@ const Config = {
   source: {
     protocol: 'https',
     wpUrl: 'yourdomain.com',
+  },
+  search: {
+      appID: App_ID,
+      adminKey: Admin_KEY,
+      searchKey: SEARCH_KEY,
+  },
+  social: {
+      twitterHandle: TWITTER_HANDLE,
   }
 }
 
@@ -28,12 +36,12 @@ module.exports = Config
 - [x] ~~Add User archive~~
 - [x] ~~Homepage hero~~
 - [ ] Featured Image refactor to not query for every post (if possible)
-- [x] Homepage layout
+- [x] ~~Homepage layout~~
 - [ ] Move images to CDN
 - [ ] Use Gatsby Image for responsiveness
 - [ ] Gallery popup, with EXIF data
 - [ ] Find way to bring in homepage hero better, currently looking for exact image
-- [ ] Add social share
+- [x] ~~Add social share~~
 - [ ] FontAwesome integration
 - [ ] Add page transitions
 - [ ] Add Yoast SEO via WPGraphQL

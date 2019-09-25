@@ -811,10 +811,7 @@ header .flex-wrapper {
 header .searchform {
     display: none;
 }
-header .searchform::before {
-	font-family: 'FontAwesome';
-	content: '\f002';
-}
+
 header input[type="search"] {
 	border: transparent;
 	background-color: transparent;
@@ -895,6 +892,18 @@ header input[type="search"]:focus {
 	color: white;
 }
 /* Single Post */
+.social-share-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.social-item:hover {
+    cursor: pointer;
+}
+.social-item + .social-item {
+    margin-left: .5rem;
+}
 
 /* Categories */
 .post-categories,

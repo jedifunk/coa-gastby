@@ -6,6 +6,7 @@ import HpHero from '../../components/home-hero'
 import Sidebar from "../../components/sidebar"
 import FeaturedPost from "../../components/featured-post"
 import PostEntry from '../../components/post-entry'
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 const renderPreviousLink = props => {
     const {
@@ -25,7 +26,7 @@ const renderPreviousLink = props => {
     return (
       <div className="nav-previous">
         <Link to={previousLink}>
-          Newer Posts
+          <FaAngleLeft /> Newer Posts
         </Link>
       </div>
     )
@@ -40,7 +41,7 @@ const renderNextLink = props => {
       return (
         <div className="nav-next">
           <Link to={`/page/${pageNumber + 1}`}>
-            Older Posts
+            Older Posts <FaAngleRight />
           </Link>
         </div>
       )
