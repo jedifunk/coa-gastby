@@ -1,6 +1,6 @@
-import { graphql } from 'gatsby'
+const { CoreGalleryBlockFragment } = require("./CoreGalleryBlockFragment")
 
-export const PostTemplateFragment = graphql`
+const PostTemplateFragment = `
   fragment PostTemplateFragment on WPGraphQL_Post {
     id
     postId
@@ -12,7 +12,7 @@ export const PostTemplateFragment = graphql`
     blocks {
       name
       originalContent
-      
+      ...CoreGalleryBlockFragment
     }
     categories {
       nodes {
@@ -36,4 +36,7 @@ export const PostTemplateFragment = graphql`
       sourceUrl(size: MED_VERT)
     }
   }
+  ${ CoreGalleryBlockFragment }
 `
+
+module.exports.PostTemplateFragment = PostTemplateFragment

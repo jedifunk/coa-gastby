@@ -4,7 +4,7 @@ import Layout from "../../components/layout"
 import { Helmet } from 'react-helmet'
 import Sidebar from "../../components/sidebar"
 import PostMeta from '../../components/post-meta'
-import CoreGalleryBlock from '../../components/gallery.js'
+import CoreGalleryBlock from '../../components/gallery'
 import ReactHtmlParser from 'react-html-parser'
 import { TransitionLink } from "gatsby-plugin-transition-link"
 import SocialShare from '../../components/social-share'

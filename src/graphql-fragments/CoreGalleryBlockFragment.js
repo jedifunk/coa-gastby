@@ -1,6 +1,4 @@
-import { graphql } from "gatsby"
-
-export const CoreGalleryBlockFragment = graphql`
+const CoreGalleryBlockFragment = `
   fragment CoreGalleryBlockFragment on WPGraphQL_CoreGalleryBlock {
     attributes {
       align
@@ -13,3 +11,5 @@ export const CoreGalleryBlockFragment = graphql`
     originalContent
   }
 `
+
+module.exports.CoreGalleryBlockFragment = CoreGalleryBlockFragment

@@ -1,5 +1,5 @@
 const path = require(`path`)
-//const { PostTemplateFragment } = require(`../src/graphql-fragments/PostTemplateFragment.js`)
+const { PostTemplateFragment } = require("../src/graphql-fragments/PostTemplateFragment")
 const blogTemplate = path.resolve(`./src/templates/posts/archive.js`)
 const postTemplate = path.resolve(`./src/templates/posts/single.js`)
 
@@ -21,7 +21,7 @@ const GET_POSTS = `
       }
     }
   }
-
+  ${ PostTemplateFragment }
   `
 const allPosts = []
 const blogPages = []
