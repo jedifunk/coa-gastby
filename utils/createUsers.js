@@ -1,5 +1,5 @@
 const path = require(`path`)
-const { PostTemplateFragment } = require(`../src/templates/posts/data.js`)
+//const { PostTemplateFragment } = require(`../src/graphql-fragments/PostTemplateFragment.js`)
 const usersTemplate = path.resolve(`./src/templates/users/archive.js`)
 
 module.exports = async ({ actions, graphql }) => {
@@ -25,7 +25,7 @@ module.exports = async ({ actions, graphql }) => {
         }
       }
     }
-    ${PostTemplateFragment}
+
   `
   const { createPage } = actions
   const allUsers = []

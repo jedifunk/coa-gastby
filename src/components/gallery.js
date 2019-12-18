@@ -1,17 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
-
-export const CoreGalleryBlockFragment = `
-  fragment CoreGalleryBlockFragment on CoreGalleryBlock {
-    attributes {
-      caption
-      className
-      columns
-      imageCrop
-      images
-    }
-    originalContent
-  }`
 
 const CoreGalleryBlock = props => (
   <figure className="wp-block-gallery columns-4 is-cropped">
