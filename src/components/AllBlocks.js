@@ -1,6 +1,7 @@
 import React from "react"
 import CoreParagraphBlock from "../blocks/Paragraph"
 import CoreSeparatorBlock from "../blocks/Separator"
+import CoreListBlock from "../blocks/List"
 
 const AllBlocks = ({ blockData }) => {
 
@@ -9,7 +10,7 @@ const AllBlocks = ({ blockData }) => {
   /**
    * Default component
    */
-  const Default = () => (<div>In AllBlocks the mapping of this component is missing: <strong>{blockType}</strong></div> )
+  const Default = () => (<div><pre>In AllBlocks the mapping of this component is missing: <strong>{blockType}</strong></pre></div> )
 
   /**
    * Mapping the __typename(s) to our components
@@ -17,6 +18,7 @@ const AllBlocks = ({ blockData }) => {
   const blocks = {
     WPGraphQL_CoreParagraphBlock: CoreParagraphBlock,
     WPGraphQL_CoreSeparatorBlock: CoreSeparatorBlock,
+    WPGraphQL_CoreListBlock: CoreListBlock,
     page_default: Default,
   }
 
