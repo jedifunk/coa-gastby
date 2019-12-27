@@ -1,9 +1,9 @@
 const path = require(`path`)
-const { PostTemplateFragment, } = require("../src/templates/posts/data.js")
+const { PostPreviewFragment, } = require("../src/templates/posts/data.js")
 const usersTemplate = path.resolve(`./src/templates/users/archive.js`)
 
-const GET_USERS = (blocks) => `
-  ${PostTemplateFragment(blocks)}
+const GET_USERS = `
+  ${PostPreviewFragment}
   
   query GET_USERS($first: Int) {
     wpgraphql {
@@ -19,7 +19,7 @@ const GET_USERS = (blocks) => `
           slug
           posts {
             nodes {
-              ...PostTemplateFragment
+              ...PostPreviewFragment
             }
           }
         }
