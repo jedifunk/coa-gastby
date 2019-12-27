@@ -3,6 +3,7 @@ import CoreParagraphBlock from "../blocks/Paragraph"
 import CoreSeparatorBlock from "../blocks/Separator"
 import CoreListBlock from "../blocks/List"
 import CoreImageBlock from "../blocks/Image"
+import CoreHeadingBlock from "../blocks/Heading"
 
 const AllBlocks = ({ blockData }) => {
 
@@ -21,6 +22,7 @@ const AllBlocks = ({ blockData }) => {
     WPGraphQL_CoreSeparatorBlock: CoreSeparatorBlock,
     WPGraphQL_CoreListBlock: CoreListBlock,
     WPGraphQL_CoreImageBlock: CoreImageBlock,
+    WPGraphQL_CoreHeadingBlock: CoreHeadingBlock,
     page_default: Default,
   }
 
