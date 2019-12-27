@@ -1,5 +1,6 @@
 import React from "react"
 import CoreParagraphBlock from "../blocks/Paragraph"
+import CoreSeparatorBlock from "../blocks/Separator"
 
 const AllBlocks = ({ blockData }) => {
 
@@ -15,6 +16,7 @@ const AllBlocks = ({ blockData }) => {
    */
   const blocks = {
     WPGraphQL_CoreParagraphBlock: CoreParagraphBlock,
+    WPGraphQL_CoreSeparatorBlock: CoreSeparatorBlock,
     page_default: Default,
   }
 

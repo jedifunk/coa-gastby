@@ -1,6 +1,6 @@
 module.exports = () => {
   return `
-    ... on CoreSeparatorBlock {
+    ... on WPGraphQL_CoreSeparatorBlock {
       __typename
       originalContent
     }
