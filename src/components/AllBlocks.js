@@ -4,6 +4,7 @@ import CoreParagraphBlock from "../blocks/Paragraph"
 const AllBlocks = ({ blockData }) => {
 
   const blockType = blockData.__typename
+  console.log(blockType)
 
   /**
    * Default component

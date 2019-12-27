@@ -1,19 +1,19 @@
 import React from "react"
-import { Link } from 'gatsby'
 import Layout from "../../components/layout"
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
+
 import Sidebar from "../../components/sidebar"
 import PostMeta from '../../components/post-meta'
 import AllBlocks from '../../components/AllBlocks'
-import ReactHtmlParser from 'react-html-parser'
+import SocialShare from '../../components/social-share'
+const Config = require('../../../config')
 // import { TransitionLink } from "gatsby-plugin-transition-link"
-// import SocialShare from '../../components/social-share'
-
-// const Config = require('../../../config')
 
 const SinglePost = ({ pageContext }) => {
     const {
-        page: {
+        post: {
           id,
           postId,
           uri,
@@ -22,12 +22,13 @@ const SinglePost = ({ pageContext }) => {
           date,
           author,
           categories,
+          featuredImage,
           prev,
           next,
         },
     } = pageContext
 
-    const Allblocks = blocks.blocks || []
+    const allBlocks = blocks.blocks || []
 
     return(
     <Layout>
@@ -41,10 +42,10 @@ const SinglePost = ({ pageContext }) => {
                         <PostMeta date={date} author={author} categories={categories} />
                     </header>
 
-                    { Allblocks.map((block, index) => {
+                    { allBlocks.map((block, index) => {
                       return <AllBlocks key={index} blockData={block} />
                     })}
-                    {/* <SocialShare 
+                    <SocialShare 
                         socialConfig={{
                             config: {
                                 url: `${Config.source.url}/${uri}`,
@@ -52,7 +53,7 @@ const SinglePost = ({ pageContext }) => {
                         }}
                         title={title} 
                         featuredImage={featuredImage}
-                        twitterHandle={Config.social.twitterHandle} /> */}
+                        twitterHandle={Config.social.twitterHandle} />
                 </article>
     
                 <nav className="navigation post-navigation" role="navigation">
