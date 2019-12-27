@@ -1,14 +1,17 @@
 const path = require(`path`)
-const { PostTemplateFragment } = require("../src/graphql-fragments/PostTemplateFragment")
+const { PostTemplateFragment } = require("../src/templates/posts/data.js")
+const { getAllBlocksData } = require("./utils")
 const blogTemplate = path.resolve(`./src/templates/posts/archive.js`)
 const postTemplate = path.resolve(`./src/templates/posts/single.js`)
 
-const GET_POSTS = `
+const GET_POSTS = (blocks) => `
+  ${PostTemplateFragment(blocks)}
+
   query GET_POSTS($first:Int $after:String){
     wpgraphql {
       posts(
         first: $first 
-        after:$after
+        after: $after
       ) {
         pageInfo {
           endCursor
@@ -21,18 +24,19 @@ const GET_POSTS = `
       }
     }
   }
-  ${ PostTemplateFragment }
-  `
+`
 const allPosts = []
 const blogPages = []
 let pageNumber = 0
 
 module.exports = async ({ actions, graphql }) => {
 
+  const blocksData = getAllBlocksData()
+
   const { createPage } = actions
   
   const fetchPosts = async variables =>
-    await graphql(GET_POSTS, variables).then(({ data }) => {
+    await graphql(GET_POSTS(blocksData), variables).then(({ data }) => {
       const {
         wpgraphql: {
           posts: {

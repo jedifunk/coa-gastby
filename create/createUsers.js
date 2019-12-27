@@ -1,34 +1,39 @@
 const path = require(`path`)
-const { PostTemplateFragment } = require("../src/graphql-fragments/PostTemplateFragment")
+const { PostTemplateFragment, } = require("../src/templates/posts/data.js")
 const usersTemplate = path.resolve(`./src/templates/users/archive.js`)
 
-module.exports = async ({ actions, graphql }) => {
-  const GET_USERS = `
-    query GET_USERS($first: Int) {
-      wpgraphql {
-        users(first: $first) {
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
-          nodes {
-            id
-            name
-            userId
-            slug
-            posts {
-              nodes {
-                ...PostTemplateFragment
-              }
+const GET_USERS = (blocks) => `
+  ${PostTemplateFragment(blocks)}
+  
+  query GET_USERS($first: Int) {
+    wpgraphql {
+      users(first: $first) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        nodes {
+          id
+          name
+          userId
+          slug
+          posts {
+            nodes {
+              ...PostTemplateFragment
             }
           }
         }
       }
     }
-    ${ PostTemplateFragment }
-  `
+  }
+`
+
+const allUsers = []
+
+module.exports = async ({ actions, graphql }) => {
+
   const { createPage } = actions
-  const allUsers = []
+
   const fetchUsers = async variables =>
     await graphql(GET_USERS, variables).then(({ data }) => {
       const {

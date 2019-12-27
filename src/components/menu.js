@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { createLocalLink } from '../../utils'
+import { createLocalLink } from '../../create'
 
 const MENU_QUERY = graphql`
 query {

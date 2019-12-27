@@ -30,7 +30,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-algolia`,
-      options: require(`./utils/algolia.js`),
+      options: require(`./create/algolia.js`),
     },
     {
       resolve: `gatsby-source-instagram`,
