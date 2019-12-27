@@ -2,6 +2,7 @@ import React from "react"
 import CoreParagraphBlock from "../blocks/Paragraph"
 import CoreSeparatorBlock from "../blocks/Separator"
 import CoreListBlock from "../blocks/List"
+import CoreImageBlock from "../blocks/Image"
 
 const AllBlocks = ({ blockData }) => {
 
@@ -19,6 +20,7 @@ const AllBlocks = ({ blockData }) => {
     WPGraphQL_CoreParagraphBlock: CoreParagraphBlock,
     WPGraphQL_CoreSeparatorBlock: CoreSeparatorBlock,
     WPGraphQL_CoreListBlock: CoreListBlock,
+    WPGraphQL_CoreImageBlock: CoreImageBlock,
     page_default: Default,
   }
 
