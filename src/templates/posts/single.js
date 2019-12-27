@@ -28,7 +28,7 @@ const SinglePost = ({ pageContext }) => {
         },
     } = pageContext
 
-    const allBlocks = blocks.blocks || []
+    const allBlocks = blocks || []
 
     return(
     <Layout>

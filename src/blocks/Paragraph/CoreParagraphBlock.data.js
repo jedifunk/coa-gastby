@@ -1,9 +1,9 @@
 module.exports = () => {
   return `
-    ... on WPGraphQL_Post_CoreParagraphBlock {
-      __typename
+    ... on WPGraphQL_CoreParagraphBlock {
+      originalContent
       attributes {
-        ... on CoreParagraphBlockAttributesV3 {
+        ... on WPGraphQL_CoreParagraphBlockAttributesV3 {
           content
         }
       }

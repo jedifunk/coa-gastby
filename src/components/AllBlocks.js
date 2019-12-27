@@ -4,18 +4,17 @@ import CoreParagraphBlock from "../blocks/Paragraph"
 const AllBlocks = ({ blockData }) => {
 
   const blockType = blockData.__typename
-  console.log(blockType)
 
   /**
    * Default component
    */
-  const Default = () => ( <div>In AllBlocks the mapping of this component is missing: {blockType}</div> )
+  const Default = () => (<div>In AllBlocks the mapping of this component is missing: <strong>{blockType}</strong></div> )
 
   /**
    * Mapping the __typename(s) to our components
    */
   const blocks = {
-    CoreParagraphBlock: CoreParagraphBlock,
+    WPGraphQL_CoreParagraphBlock: CoreParagraphBlock,
     page_default: Default,
   }
 
