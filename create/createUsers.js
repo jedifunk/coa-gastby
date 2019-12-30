@@ -1,9 +1,11 @@
 const path = require(`path`)
 const { PostPreviewFragment, } = require("../src/templates/posts/data.js")
+const { FluidImageFragment } = require("../src/templates/fragments")
 const usersTemplate = path.resolve(`./src/templates/users/archive.js`)
 
 const GET_USERS = `
   ${PostPreviewFragment}
+  ${FluidImageFragment}
   
   query GET_USERS($first: Int) {
     wpgraphql {

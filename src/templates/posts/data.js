@@ -6,7 +6,6 @@ const PostTemplateFragment = (blocks) => `
     excerpt
     uri
     date
-    content
     blocks {
       __typename
       ${blocks}
@@ -26,11 +25,6 @@ const PostTemplateFragment = (blocks) => `
     author {
       name
       slug
-    }
-    featuredImage {
-      id
-      mediaItemId
-      sourceUrl(size: MED_VERT)
     }
   }
 `
@@ -63,6 +57,13 @@ const PostPreviewFragment = `
       id
       mediaItemId
       sourceUrl(size: MED_VERT)
+      imageFile {
+        childImageSharp {
+          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
     }
   }
 `

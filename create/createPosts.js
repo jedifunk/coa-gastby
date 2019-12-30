@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { PostTemplateFragment, PostPreviewFragment } = require("../src/templates/posts/data.js")
+const { FluidImageFragment } = require("../src/templates/fragments")
 const { getAllBlocksData } = require("./utils")
 const blogTemplate = path.resolve(`./src/templates/posts/archive.js`)
 const postTemplate = path.resolve(`./src/templates/posts/single.js`)
@@ -7,6 +8,7 @@ const postTemplate = path.resolve(`./src/templates/posts/single.js`)
 const GET_POSTS = (blocks) => `
   ${PostTemplateFragment(blocks)}
   ${PostPreviewFragment}
+  ${FluidImageFragment}
 
   query GET_POSTS($first:Int $after:String){
     wpgraphql {
@@ -30,6 +32,7 @@ const GET_POSTS = (blocks) => `
 const allPosts = []
 const blogPages = []
 let pageNumber = 0
+const itemsPerPage = 10
 
 module.exports = async ({ actions, graphql }) => {
 
@@ -93,6 +96,8 @@ module.exports = async ({ actions, graphql }) => {
           nodes,
           pageNumber: pageNumber + 1,
           hasNextPage,
+          itemsPerPage,
+          allPosts,
         },
       }
 
@@ -104,11 +109,16 @@ module.exports = async ({ actions, graphql }) => {
         allPosts.push(post)
       })
       
+      /**
+       * If there's another post, fetch more
+       * so we can have all the data we need.
+       */
       if (hasNextPage) {
         pageNumber++
-        console.log(`fetch page ${pageNumber} of posts...`)
-        return fetchPosts({ first: 10, after: endCursor })
+        console.log(`fetch post ${pageNumber} of posts...`)
+        return fetchPosts({ first: itemsPerPage, after: endCursor })
       }
+
       return allPosts
     })
   
@@ -116,7 +126,7 @@ module.exports = async ({ actions, graphql }) => {
 * Kick off our `fetchPosts` method which will get us all
 * the posts we need to create individual posts.
 */
-  await fetchPosts({ first: 10, after: null }).then(wpPosts => {
+  await fetchPosts({ first: itemsPerPage, after: null }).then(wpPosts => {
     wpPosts &&
     wpPosts.map((post, index) => {
       console.log(`create post: ${post.uri}`)
@@ -124,7 +134,7 @@ module.exports = async ({ actions, graphql }) => {
         path: `${post.uri}/`,
         component: postTemplate,
         context: {
-            post,
+            post: post,
             prev: allPosts[index + 1],
             next: allPosts[index - 1],
         }

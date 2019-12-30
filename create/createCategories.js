@@ -1,9 +1,11 @@
 const path = require(`path`)
 const { PostPreviewFragment } = require("../src/templates/posts/data.js")
+const { FluidImageFragment } = require("../src/templates/fragments")
 const categoryTemplate = path.resolve(`./src/templates/categories/archive.js`)
 
 const GET_CATEGORIES = `
   ${PostPreviewFragment}
+  ${FluidImageFragment}
 
   query GET_CATEGORIES($first: Int) {
     wpgraphql { 
