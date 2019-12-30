@@ -7,6 +7,7 @@ Tools in use:
 - [WPGraphQL](https://wpgraphql.com) plugin to create the GraphQL schema.
 - [Algolia](https://www.algolia.com/) for search.
 - Instagram feed added via [gatsby-source-instagram](https://www.gatsbyjs.org/packages/gatsby-source-instagram/).
+- Refactored to use [wp-graphql-gutenberg](https://github.com/pristas-peter/wp-graphql-gutenberg) plugin for accessing Gutenberg blocks
 
 ## Create config file
 ```javascript
