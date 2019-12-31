@@ -59,7 +59,7 @@ const PostPreviewFragment = `
       sourceUrl(size: MED_VERT)
       imageFile {
         childImageSharp {
-          fluid(maxHeight: 400, maxWidth: 800, quality: 90, cropFocus: CENTER) {
+          fluid(maxHeight: 500, maxWidth: 375, quality: 90, cropFocus: CENTER) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
