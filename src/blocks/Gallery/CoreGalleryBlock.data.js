@@ -8,8 +8,22 @@ module.exports = () => {
         columns
         imageCrop
         images
+        ids
       }
-      originalContent
+      galleryImages {
+        nodes {
+          mediaItemId
+          mediaDetails {
+            meta {
+              aperture
+              camera
+              focalLength
+              iso
+              shutterSpeed
+            }
+          }
+        }
+      }
     }
   `
 }
