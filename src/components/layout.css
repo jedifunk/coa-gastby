@@ -860,7 +860,9 @@ section.wp-block-cover-image>h2 {
 
 .wp-block-image figcaption {
     margin-top: .5em;
-    margin-bottom: 1em
+    margin-bottom: 1em;
+    margin-left: .5em;
+    font-size: .8rem;
 }
 
 .is-style-circle-mask img {

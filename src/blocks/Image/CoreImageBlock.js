@@ -7,6 +7,7 @@ const CoreImageBlock = ({ attributes }) => {
   return (
     <figure className="wp-block-image">
       <img src={url} alt={alt} />
+      <figcaption>{caption}</figcaption>
     </figure>
   )
 }
