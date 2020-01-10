@@ -17,7 +17,6 @@ module.exports = () => {
             meta {
               aperture
               camera
-              focalLength
               iso
               shutterSpeed
             }

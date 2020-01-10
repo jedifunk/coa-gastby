@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
 
-const CoreGalleryBlock = ({ attributes }) => {
+const CoreGalleryBlock = ({ attributes, galleryImages }) => {
 console.log(attributes)
   const {columns, images, imageCrop, align, caption} = attributes
   
