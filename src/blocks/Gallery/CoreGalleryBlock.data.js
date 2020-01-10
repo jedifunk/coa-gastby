@@ -13,6 +13,7 @@ module.exports = () => {
       galleryImages {
         nodes {
           mediaItemId
+          mediaItemUrl
           mediaDetails {
             meta {
               aperture
