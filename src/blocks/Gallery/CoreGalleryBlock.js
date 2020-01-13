@@ -3,44 +3,97 @@ import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
 
 const CoreGalleryBlock = ({ attributes, galleryImages }) => {
-console.log(attributes)
+
   const {columns, images, imageCrop, align, caption} = attributes
-  
-  // convert images JSON into array
-  let imgs = JSON.parse(images)
 
   // Set State for Lightbox
   const [photoIndex, setPhotoIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
 
+  // Shutter Speed conversion function
+  function sSpeed(d) {
+    if (d >= 1) {
+      return Math.round(d) + "s"
+    }
+    var df = 1,
+      top = 1,
+      bot = 1
+    var tol = 1e-8 // seems to allow for d > 1e-4
+    while (df !== d && Math.abs(df - d) > tol) {
+      if (df < d) {
+        top += 1
+      } else {
+        bot += 1
+        top = parseInt(d * bot, 10)
+      }
+      df = top / bot
+    }
+    if (top > 1) {
+      bot = Math.round(bot / top)
+      top = 1
+    }
+    if (bot <= 1) {
+      return "1s"
+    }
+    return top + "/" + bot + "s"
+  }
+
   return (
     <figure className={`wp-block-gallery columns-${columns} is-cropped`}>
       <ul className="blocks-gallery-grid">
-        {imgs.map( (img, index) => {
+        {galleryImages.nodes.map((img, index) => {
           // setup onclick function to handle state change
           function updateOnClick() {
             setPhotoIndex(index)
             setIsOpen(true)
           }
           return (
-            <li key={index} onClick={updateOnClick} className="blocks-gallery-item">
+            <li
+              key={index}
+              onClick={updateOnClick}
+              className="blocks-gallery-item"
+            >
               <figure>
-                <img src={img.url} />
+                <img src={img.mediaItemUrl} />
               </figure>
             </li>
           )
         })}
-        
       </ul>
 
       {isOpen && (
         <Lightbox
-          mainSrc={imgs[photoIndex].url}
-          nextSrc={imgs[(photoIndex + 1) % imgs.length].url}
-          prevSrc={imgs[(photoIndex + imgs.length - 1) % imgs.length].url}
+          mainSrc={galleryImages.nodes[photoIndex].mediaItemUrl}
+          nextSrc={
+            galleryImages.nodes[(photoIndex + 1) % galleryImages.nodes.length]
+              .mediaItemUrl
+          }
+          prevSrc={
+            galleryImages.nodes[
+              (photoIndex + galleryImages.nodes.length - 1) %
+                galleryImages.nodes.length
+            ].mediaItemUrl
+          }
           onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() => setPhotoIndex( (photoIndex + imgs.length -1) % imgs.length )}
-          onMoveNextRequest={() => setPhotoIndex( (photoIndex + 1) % imgs.length )}
+          onMovePrevRequest={() =>
+            setPhotoIndex(
+              (photoIndex + galleryImages.nodes.length - 1) %
+                galleryImages.nodes.length
+            )
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % galleryImages.nodes.length)
+          }
+          enableZoom={false}
+          imageCaption={`Camera: ${
+            galleryImages.nodes[photoIndex].mediaDetails.meta.camera
+          }, Aperture: f/${
+            galleryImages.nodes[photoIndex].mediaDetails.meta.aperture
+          }, ISO: ${
+            galleryImages.nodes[photoIndex].mediaDetails.meta.iso
+          }, Shutter Speed: ${sSpeed(
+            galleryImages.nodes[photoIndex].mediaDetails.meta.shutterSpeed
+          )}`}
         />
       )}
     </figure>

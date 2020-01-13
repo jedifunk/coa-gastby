@@ -13,7 +13,7 @@ const SinglePage = props => {
     <Layout>
     <Helmet bodyAttributes={{ class: 'page' }} />
       <div id="primary" className="content-area wrapper">
-        <div className="grid-wrapper">
+        <div className="grid-wrapper grid-main">
           <main id="main" className="site-main" role="main">
             <article data-id={id} id={`post-${postId}`} className={`post-${postId} page type-page status-publish hentry entry`} >
               <header className="entry-header">
