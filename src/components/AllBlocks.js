@@ -5,6 +5,7 @@ import CoreListBlock from "../blocks/List"
 import CoreImageBlock from "../blocks/Image"
 import CoreHeadingBlock from "../blocks/Heading"
 import CoreGalleryBlock from "../blocks/Gallery"
+import CoreVideoBlock from "../blocks/Video"
 
 const AllBlocks = ({ blockData }) => {
 
@@ -25,6 +26,7 @@ const AllBlocks = ({ blockData }) => {
     WPGraphQL_CoreImageBlock: CoreImageBlock,
     WPGraphQL_CoreHeadingBlock: CoreHeadingBlock,
     WPGraphQL_CoreGalleryBlock: CoreGalleryBlock,
+    WPGraphQL_CoreVideoBlock: CoreVideoBlock,
     page_default: Default,
   }
 
