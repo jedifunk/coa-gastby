@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
+import ReactHtmlParser from 'react-html-parser'
 
 const CoreGalleryBlock = ({ attributes, galleryImages }) => {
 
@@ -58,6 +59,7 @@ const CoreGalleryBlock = ({ attributes, galleryImages }) => {
             >
               <figure>
                 <img src={img.mediaItemUrl} />
+                <figcaption>{ReactHtmlParser(img.caption)}</figcaption>
               </figure>
             </li>
           )
@@ -97,6 +99,7 @@ const CoreGalleryBlock = ({ attributes, galleryImages }) => {
           }, Shutter Speed: ${sSpeed(
             galleryImages.nodes[photoIndex].mediaDetails.meta.shutterSpeed
           )}`}
+          imageTitle={ReactHtmlParser(galleryImages.nodes[photoIndex].caption)}
         />
       )}
     </figure>

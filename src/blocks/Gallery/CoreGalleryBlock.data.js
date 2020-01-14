@@ -14,6 +14,7 @@ module.exports = () => {
         nodes {
           mediaItemId
           mediaItemUrl
+          caption
           mediaDetails {
             meta {
               aperture

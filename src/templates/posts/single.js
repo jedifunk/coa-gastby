@@ -28,7 +28,7 @@ const SinglePost = ({ pageContext }) => {
       next,
     },
   } = pageContext
-console.log(pageContext.prev)
+
   const allBlocks = blocks || []
 
   return (
