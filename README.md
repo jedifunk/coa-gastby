@@ -68,7 +68,7 @@ add_action( 'graphql_register_types', 'coa_register_graphql_connection' );
 - ~~[ ] Use Gatsby Image for responsiveness~~ Unnecessary since using CDN
 - [ ] Lazy load images, maybe(?)
 - [x] ~~Gallery popup~~
-- [ ] EXIF data to lightbox images
+- [x] ~~EXIF data to lightbox images~~
 - [x] ~~Add social share~~
 - [x] ~~FontAwesome integration~~
 - [ ] Add page transitions

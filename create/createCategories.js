@@ -19,7 +19,7 @@ const GET_CATEGORIES = `
           name
           categoryId
           slug
-          posts {
+          posts(first:100) {
             nodes {
               ...PostPreviewFragment
             }
@@ -35,6 +35,7 @@ const allCategories = []
 module.exports = async ({ actions, graphql }) => {
   
   const { createPage } = actions
+
   const fetchCategories = async variables =>
     await graphql(GET_CATEGORIES, variables).then(({ data }) => {
       const {
@@ -45,18 +46,23 @@ module.exports = async ({ actions, graphql }) => {
           },
         },
       } = data
+
       nodes.map(category => {
         allCategories.push(category)
       })
+
       if (hasNextPage) {
         return fetchCategories({ first: 100, after: endCursor })
       }
+      
       return allCategories
     })
 
   await fetchCategories({ first: 100, after: null }).then(allCategories => {
     allCategories.map(category => {
+
       console.log(`create category: ${category.slug}`)
+      
       createPage({
         path: `/category/${category.slug}`,
         component: categoryTemplate,
