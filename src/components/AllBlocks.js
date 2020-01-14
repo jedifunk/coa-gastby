@@ -7,6 +7,7 @@ import CoreHeadingBlock from "../blocks/Heading"
 import CoreGalleryBlock from "../blocks/Gallery"
 import CoreVideoBlock from "../blocks/Video"
 import CoreHtmlBlock from "../blocks/Html"
+import CoreQuoteBlock from "../blocks/Quote"
 import CoreEmbedYoutubeBlock from "../blocks/YouTube"
 
 const AllBlocks = ({ blockData }) => {
@@ -31,6 +32,7 @@ const AllBlocks = ({ blockData }) => {
     WPGraphQL_CoreVideoBlock: CoreVideoBlock,
     WPGraphQL_CoreHtmlBlock: CoreHtmlBlock,
     WPGraphQL_CoreEmbedYoutubeBlock: CoreEmbedYoutubeBlock,
+    WPGraphQL_CoreQuoteBlock: CoreQuoteBlock,
     page_default: Default,
   }
 

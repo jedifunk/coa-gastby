@@ -2214,7 +2214,8 @@ dfn,
 cite,
 em,
 i {
-	font-style: italic;
+    font-style: italic;
+    font-size: .8rem;
 }
 
 blockquote {
@@ -2289,6 +2290,11 @@ q:after {
 blockquote,
 q {
 	quotes: "" "";
+}
+
+blockquote > p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 hr {
