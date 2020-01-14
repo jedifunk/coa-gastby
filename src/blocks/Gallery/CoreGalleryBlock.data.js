@@ -10,7 +10,7 @@ module.exports = () => {
         images
         ids
       }
-      galleryImages {
+      galleryImages(first: 50) {
         nodes {
           mediaItemId
           mediaItemUrl

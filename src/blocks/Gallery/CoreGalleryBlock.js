@@ -5,6 +5,9 @@ import 'react-image-lightbox/style.css'
 const CoreGalleryBlock = ({ attributes, galleryImages }) => {
 
   const {columns, images, imageCrop, align, caption} = attributes
+  
+  // check for null value... mostly for older posts that randomly return null
+  const cols = (columns != null) ? columns : 3
 
   // Set State for Lightbox
   const [photoIndex, setPhotoIndex] = useState(0)
@@ -39,7 +42,7 @@ const CoreGalleryBlock = ({ attributes, galleryImages }) => {
   }
 
   return (
-    <figure className={`wp-block-gallery columns-${columns} is-cropped`}>
+    <figure className={`wp-block-gallery columns-${cols} is-cropped`}>
       <ul className="blocks-gallery-grid">
         {galleryImages.nodes.map((img, index) => {
           // setup onclick function to handle state change
