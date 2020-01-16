@@ -13,7 +13,7 @@ const BlogArchive = ({pageContext}) => {
   const paged = pageNumber > 1 ? `paged page-${pageNumber}` : ''
 
   return (
-    <Layout>
+    <Layout pageNumber={pageNumber}>
     <Helmet>
         <body class={`home blog ${paged}`} />
     </Helmet>

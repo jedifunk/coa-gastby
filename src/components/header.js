@@ -1,22 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React, { useEffect } from "react"
 import { Link } from 'gatsby'
 import Menu from "./Menu"
 import SearchInput from "./Search/input"
 
-const Header = ({ siteTitle }) => {
-
-  window.onscroll = function() {
-    var heroHeight = 100
-    var scrollPosition = window.pageYOffset
-
-    if( scrollPosition > heroHeight ) {
-      document.querySelector('.site-header').classList.add('scrolled')
-    } else {
-      document.querySelector('.site-header').classList.remove('scrolled')
-    }
-  }
-
+const Header = ({ pageNumber }) => {
+  useEffect(() => {
+    if (pageNumber === 1) { HeaderScroll() }
+  })
+  
   return(
     <header id="masthead" className="site-header" role="banner">
       <div className="wrapper flex-wrapper">
@@ -26,14 +17,24 @@ const Header = ({ siteTitle }) => {
         </div>
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  
 }
 
 export default Header
+
+
+// Scroll function
+const HeaderScroll = () => {
+  const heroHeight = 100
+  const header = document.querySelector('.site-header')
+  let scrollPosition = 0
+
+  window.onscroll = () => {
+
+    scrollPosition = window.pageYOffset
+    let condition = scrollPosition > heroHeight
+
+    header.classList.toggle('scrolled', !!condition)
+
+  }
+}
