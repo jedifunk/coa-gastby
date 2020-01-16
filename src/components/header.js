@@ -3,9 +3,27 @@ import { Link } from 'gatsby'
 import Menu from "./Menu"
 import SearchInput from "./Search/input"
 
-const Header = ({ pageNumber }) => {
+
+const Header = () => {
+
+  // Scroll function
+  const HeaderScroll = () => {
+    const heroHeight = 44
+    const header = document.querySelector('.site-header')
+    let scrollPosition = 0
+
+    window.onscroll = () => {
+
+      scrollPosition = window.pageYOffset
+      let condition = scrollPosition > heroHeight
+
+      header.classList.toggle('scrolled', !!condition)
+
+    }
+  }
+
   useEffect(() => {
-    if (pageNumber === 1) { HeaderScroll() }
+    HeaderScroll()
   })
   
   return(
@@ -21,20 +39,3 @@ const Header = ({ pageNumber }) => {
 }
 
 export default Header
-
-
-// Scroll function
-const HeaderScroll = () => {
-  const heroHeight = 100
-  const header = document.querySelector('.site-header')
-  let scrollPosition = 0
-
-  window.onscroll = () => {
-
-    scrollPosition = window.pageYOffset
-    let condition = scrollPosition > heroHeight
-
-    header.classList.toggle('scrolled', !!condition)
-
-  }
-}

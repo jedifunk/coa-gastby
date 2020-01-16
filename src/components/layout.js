@@ -4,11 +4,11 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 
-const Layout = ({ children, pageNumber }) => {
+const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={"Choosing Our Adventure"} pageNumber={pageNumber} />
+      <Header siteTitle={"Choosing Our Adventure"} />
       <div id="content" className="site-content">
           {children}
       </div>
