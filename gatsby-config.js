@@ -3,7 +3,8 @@ const Config = require('./config')
 module.exports = {
   siteMetadata: {
     title: `Choosing Our Adventure`,
-    description: `Travel Adventures`,
+    description: `The travel adventures of one man trying to make his way around the world.`,
+    url: 'https://choosingouradventure.com',
     author: `@jedifunk`,
   },
   plugins: [
